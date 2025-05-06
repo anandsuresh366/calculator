@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="calculator.css">
+
+
+</head>
+
+<body>
+
+    <div class="container shadow">
+
+
+        <div class="subbg shadow pt-4">
+
+
+
+
+
+
+            <input id="result" class="form-control mt-5" type="text" placeholder="0"
+                style="width: 420px; text-align: right;box-shadow: rgba(0,0,0,0.35)0px 5px 15px ; margin-left: 14px;">
+
+            <div class="d-flex justify-content-center">
+
+
+
+                <button onclick="ac()" class="btn r1button btn-outline-light ms-2 p-1 w-25 ">AC</button>
+
+                <button onclick="del()" class="btn r1button btn-outline-light ms-2 p-1 w-25">Del</button>
+
+                <button onclick="display('%')" class="btn r1button btn-outline-light ms-2 p-1 w-25">%</button>
+
+
+
+            </div>
+
+            <div class="r2">
+
+                <button onclick="display(7)" class="btn r2button btn-outline-light ">7</button>
+
+                <button onclick="display(8)" class="btn r2button btn-outline-light ">8</button>
+
+                <button onclick="display(9)" class="btn r2button btn-outline-light ">9</button>
+
+                <button onclick="display('+')" class="btn r2button btn-outline-light ">+</button>
+
+                <button onclick="display(4)" class="btn r2button btn-outline-light ">4</button>
+
+                <button onclick="display(5)" class="btn r2button btn-outline-light ">5</button>
+
+                <button onclick="display(6)" class="btn r2button btn-outline-light ">6</button>
+
+                <button onclick="display('-')" class="btn r2button btn-outline-light ">-</button>
+
+                <button onclick="display(1)" class="btn r2button btn-outline-light ">1</button>
+
+                <button onclick="display(2)" class="btn r2button btn-outline-light">2</button>
+
+                <button onclick="display(3)" class="btn r2button btn-outline-light ">3</button>
+
+                <button onclick="display('*')" class="btn r2button btn-outline-light">*</button>
+
+                <button onclick="display(0)" class="btn r2button btn-outline-light">0</button>
+
+                <button onclick="display('.')" class="btn r2button btn-outline-light">.</button>
+
+                <button onclick="equal()" class="btn r2button btn-outline-light">=</button>
+
+                <button onclick="display('/')" class="btn r2button btn-outline-light">/</button>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</body>
+
+<script>
+
+    function display(num) {
+
+        result.value += num
+
+    }
+
+    function equal() {
+        try {
+
+            result.value = eval(result.value)
+
+        }
+        catch {
+
+            result.value = 'error'
+
+            setTimeout(() => {
+
+                result.value = ''
+
+            }, 1000)
+        }
+
+
+    }
+
+    function del() {
+
+        result.value = result.value.slice(0, -1)
+
+
+    }
+
+    function ac() {
+
+        result.value = ''
+
+    }
+
+</script>
+
+</html>
